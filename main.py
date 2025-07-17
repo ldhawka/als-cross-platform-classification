@@ -138,8 +138,8 @@ def main():
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     
     # IMPORTANT: Users need to modify these paths to point to their actual data files
-    cytof_path = os.path.join(base_dir, "normalized_data_020125_labeled.h5ad")
-    scrna_path = os.path.join(base_dir, "scRNAseq_PBMC/Ito2024_normalized_clean_hvg_labeled.h5ad")
+    cytof_path = os.path.join(base_dir, "als_cytof_data.h5ad")
+    scrna_path = os.path.join(base_dir, "Itou2024_scrna_data.h5ad")
     
     # Check if data files exist
     if not os.path.exists(cytof_path):

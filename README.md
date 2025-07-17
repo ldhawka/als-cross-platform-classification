@@ -10,6 +10,8 @@ This implementation focuses on two classification tasks from our manuscript:
 
 The approach trains Random Forest models on CyTOF immune profiling data and validates them on an independent scRNA-seq dataset, demonstrating that immune coordination patterns learned from mass cytometry can generalize to single-cell RNA sequencing data.
 
+![Overview of ALS Cross-Platform Classification Pipeline](images/overview_figure.png)
+
 
 ## Installation
 
@@ -36,17 +38,13 @@ To run the classification pipeline, you need the following data files:
 
 The datasets used in this study are available on Zenodo:
 
-**[Download CyTOF Data from Zenodo](https://zenodo.org/record/[PLACEHOLDER-CYTOF-DOI])**
-- File: `cytof_data.h5ad`
-- Size: ~[SIZE]MB
-- Description: CyTOF immune profiling data from ALS patients and healthy controls
+**[Download Dataset from Zenodo](https://zenodo.org/record/[PLACEHOLDER-DOI])**
 
-**[Download scRNA-seq Data from Zenodo](https://zenodo.org/record/[PLACEHOLDER-SCRNA-DOI])**
-- File: `scrna_data.h5ad` 
-- Size: ~[SIZE]MB
-- Description: scRNA-seq validation cohort from independent ALS study
+The dataset includes:
+- **CyTOF Data** (`als_cytof_data.h5ad`): 2.2 MB - CyTOF immune profiling data from ALS patients and healthy controls
+- **scRNA-seq Data** (`Itou2024_scrna_data.h5ad`): 773.60 MB - scRNA-seq validation cohort from independent ALS study
 
-> **Note**: The scRNA-seq data is originally from [Ito et al. 2024](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE244263), processed and formatted for cross-platform validation.
+> **Note**: The scRNA-seq data is originally from [Itou et al. 2024](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE244263), processed and formatted for cross-platform validation.
 
 ### Data Setup Instructions
 
@@ -55,8 +53,8 @@ The datasets used in this study are available on Zenodo:
 3. **Update the file paths** in `main.py` (lines 153-154):
    ```python
    # IMPORTANT: Users need to modify these paths to point to their actual data files
-   cytof_path = os.path.join(base_dir, "cytof_data.h5ad")
-   scrna_path = os.path.join(base_dir, "scrna_data.h5ad")
+   cytof_path = os.path.join(base_dir, "als_cytof_data.h5ad")
+   scrna_path = os.path.join(base_dir, "Itou2024_scrna_data.h5ad")
    ```
 
 ### Data Format Requirements
@@ -132,14 +130,13 @@ If you use this code or data, please cite:
 
 **Manuscript:**
 ```
-[PLACEHOLDER - Add manuscript citation when published]
+[Placeholder - Add manuscript citation when published]
 ```
 
 **Data:**
 ```
-[PLACEHOLDER - Add Zenodo data citation]
-CyTOF Data: https://zenodo.org/record/[PLACEHOLDER-CYTOF-DOI]
-scRNA-seq Data: https://zenodo.org/record/[PLACEHOLDER-SCRNA-DOI]
+[Placeholder - Add Zenodo data citation]
+Dataset: https://zenodo.org/record/[PLACEHOLDER-DOI]
 ```
 
 **Original scRNA-seq Data:**
